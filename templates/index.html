@@ -1,0 +1,23 @@
+<body style="background:rgb(170, 199, 170);"/>
+<h1 style="text-align: center; color: blue;">Welcome</h1>
+
+{% if user.is_authenticated%}
+<div style="text-align: center;">
+    <a style="color: chocolate;" href="{% url 'logout' %}">Logout</a>
+</div>
+<div style="text-align: center; background-color: cornsilk;">
+    <p>Enter Aadhar No.</p>
+    <input type="text">
+    <button>Search</button>
+</div>
+{% else %}
+<div style="text-align: center;">
+    <h3>Not a user yet?</h3>
+    <a style="color: chocolate;" href="{% url 'register' %}">Register</a>
+</div>
+<div style="text-align: center;">
+    <h3>Already have account?</h3>
+    <a style="color:chocolate;" href="{% url 'login' %}">Login</a>
+</div>
+ 
+{% endif %}
